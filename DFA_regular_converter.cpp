@@ -5,18 +5,13 @@
 #include "constants.h"
 #include "DFA_regular_converter.h"
 
-struct DFA_regular_converter::transition {
-    int vertex_to;
-    std::string regular;
+bool DFA_regular_converter::transition::operator<(const transition &edge) const {
+    return vertex_to < edge.vertex_to;
+}
 
-    bool operator<(const transition& edge) const {
-        return vertex_to < edge.vertex_to;
-    }
-
-    bool operator==(const transition& edge) const {
-        return vertex_to == edge.vertex_to && regular == edge.regular;
-    }
-};
+bool DFA_regular_converter::transition::operator==(const transition &edge) const {
+    return vertex_to == edge.vertex_to && regular == edge.regular;
+}
 
 void DFA_regular_converter::remove_double_edges() {
     for (auto & transit: transitions) {

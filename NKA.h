@@ -1,3 +1,6 @@
+#ifndef NKA_H
+#define NKA_H
+
 class NKA {
     friend class mDKA_to_regular;
 
@@ -52,3 +55,4 @@ public:
 
     NKA get_minimal_PDKA() const;
 };
+#endif

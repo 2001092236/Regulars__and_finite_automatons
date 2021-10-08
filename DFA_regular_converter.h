@@ -1,10 +1,19 @@
+#include "NKA.h"
+
 class DFA_regular_converter {
 private:
     int number_of_vertices;
     int start_vertex;
     int final_state;
 
-    struct transition;
+    struct transition {
+        int vertex_to;
+        std::string regular;
+
+        bool operator<(const transition& edge) const;
+
+        bool operator==(const transition& edge) const;
+    };
 
     mutable std::map<int, std::vector<transition> > transitions;
 
