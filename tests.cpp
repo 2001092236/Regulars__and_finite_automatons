@@ -1,5 +1,6 @@
-#include "main.cpp"
 #include <gtest/gtest.h>
+#include "NKA.cpp"
+#include "DFA_regular_converter.cpp"
 
 NKA get_AstarBstar_automata() {
     NKA g(4, 0, {0});

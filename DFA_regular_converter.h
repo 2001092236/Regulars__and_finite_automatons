@@ -1,35 +1,34 @@
 class DFA_regular_converter {
 private:
-    int n;
-    int S;
-    int F;
+    int number_of_vertices;
+    int start_vertex;
+    int final_state;
 
     struct transition;
 
-
-    mutable map<int, vector<transition> > transitions;
+    mutable std::map<int, std::vector<transition> > transitions;
 
     void remove_double_edges();
 
-    static string add(string a, string b);
+    static std::string add(std::string a, std::string b);
 
-    static bool available_for_mul(const string& s);
+    static bool available_for_mul(const std::string& s);
 
-    static bool available_for_klini(const string& s);
+    static bool available_for_klini(const std::string& s);
 
-    static string mul(string a, string b);
+    static std::string mul(std::string a, std::string b);
 
-    static string klini(string a);
+    static std::string klini(std::string a);
 
     void remove_vertex(int v);
 
-    string get_final_regular() const;
+    std::string get_final_regular() const;
 
 public:
 
     DFA_regular_converter(const NKA& g);
 
-    void add_edge(int v, int to, string s);
+    void add_edge(int v, int to, std::string s);
 
-    string get_regular();
+    std::string get_regular();
 };
