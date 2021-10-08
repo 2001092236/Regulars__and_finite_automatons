@@ -2,7 +2,7 @@
 #include <map>
 #include <vector>
 #include <algorithm>
-#include "constants.cpp"
+#include "constants.h"
 #include "DFA_regular_converter.h"
 
 struct DFA_regular_converter::transition {

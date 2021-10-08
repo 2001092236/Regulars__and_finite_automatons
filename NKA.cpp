@@ -3,7 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <queue>
-#include "constants.cpp"
+#include "constants.h"
 #include "NKA.h"
 
 bool NKA::dfs_deleting_epsilon_transitions(int start, int current_vertex, NKA& nka, std::vector<bool>& used) const {
